@@ -237,7 +237,7 @@ def paramHasChanged(thisParam, thisNode, thisGroup, app, userEdited):
             if NatronEngine.natron.isLinux() and not os.system("which ffplay"):
                 os.system("ffplay -nodisp \"" + str(audio_file) + "\" -t " + str(duration_loop) + " -loop 0  & echo $! >" + tmp_file)
             elif NatronEngine.natron.isMacOSX() and os.path.exists("/opt/local/bin/ffplay"):
-                os.system("/opt/local/bin/ffplay -nodisp " + str(audio_file) + " -t " + str(duration_loop) + " -loop 0  & echo $! >" + tmp_file)
+                os.system("/opt/local/bin/ffplay -nodisp \"" + str(audio_file) + "\" -t " + str(duration_loop) + " -loop 0  & echo $! >" + tmp_file)
             elif NatronEngine.natron.isWindows():
                 # Replace error_man by windows player here
                 error_man("Play preview", "Function only availaible on Linux And MacOsx for now !\n\n Be patient;)")
